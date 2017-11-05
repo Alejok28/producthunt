@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   get '/products', to: 'products#index'
   get '/products/new', to: 'products#new', as: 'new_product'
-  get 'products/:id', to: 'products#show'
+  get 'products/:id', to: 'products#show', as: 'product'
+  get 'products/:id/edit', to: 'products#edit'
 
   post '/products', to: 'products#create'
 end
