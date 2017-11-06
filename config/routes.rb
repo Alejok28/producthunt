@@ -6,11 +6,12 @@ Rails.application.routes.draw do
   # patch '/products/:id', to: 'products#update'
   # delete '/products/:id' , to: 'products#destroy'
   # post '/products', to: 'products#create'
-  resource :products
+  resources :products
+  root 'products#index'
 
   #solo crea la ruta que contenga la acción index
   # resource :products, only: [:index]
 
-  #solo crea la ruta que contenga la acción index
-  # resource :products, only: [:index]
+  #solo crea todas las rutas exceptuando la que contenga la acción index y create
+  # resource :products, except: [:index, :create]
 end
